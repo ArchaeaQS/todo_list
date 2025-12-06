@@ -21,7 +21,7 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    lines_longer_than_80_chars: true
+    lines_longer_than_80_chars: false
 
 formatter:
   page_width: 100
