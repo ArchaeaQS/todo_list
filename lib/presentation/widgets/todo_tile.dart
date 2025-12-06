@@ -7,12 +7,14 @@ class TodoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(todoItem.title),
-      subtitle: Text(todoItem.description),
-      trailing: Icon(
-        todoItem.isCompleted ? Icons.check_circle : Icons.radio_button_unchecked,
-        color: todoItem.isCompleted ? Colors.green : Colors.grey,
+    return Card(
+      child: ListTile(
+        title: Text(todoItem.title),
+        subtitle: Text(todoItem.description),
+        trailing: Icon(
+          todoItem.isCompleted ? Icons.check_circle : Icons.radio_button_unchecked,
+          color: todoItem.isCompleted ? Colors.green : Colors.grey,
+        ),
       ),
     );
   }

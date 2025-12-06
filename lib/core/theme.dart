@@ -9,6 +9,9 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.lightBlueAccent,
       brightness: Brightness.dark,
+      surface: Colors.grey[900],
+      surfaceContainer: Colors.white,
     ),
+    cardTheme: CardThemeData(color: Colors.blueGrey[900]),
   );
 }
