@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/domain/entities/todo.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:todo_list/presentation/providers/todo_providers.dart';
 import 'package:todo_list/presentation/widgets/todo_list.dart';
 
-class TodoPage extends StatelessWidget {
+class TodoPage extends HookConsumerWidget {
   const TodoPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final todoList = [
-      // Sample data
-      TodoItem(
-        id: "1",
-        title: 'Buy groceries',
-        description: 'Milk, Bread, Eggs',
-        isCompleted: false,
-      ),
-      TodoItem(
-        id: "2",
-        title: 'Walk the dog',
-        description: 'Evening walk in the park',
-        isCompleted: true,
-      ),
-    ];
+  Widget build(BuildContext context, WidgetRef ref) {
+    final todoList = ref.watch(todoListProvider).value ?? [];
 
     return Scaffold(
       appBar: AppBar(title: Text('Todo')),
